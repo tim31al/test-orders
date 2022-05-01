@@ -17,3 +17,17 @@ POST http://localhost:8080/orders - create order
 PUT http://localhost:8080/orders/id - update order
 
 DELETE http://localhost:8080/orders/id - delete order
+
+POST, PUT payload
+
+{
+    "orderNumber": string,
+    "lastname": string,
+    "firstname": string,
+    "price": int,
+    "address": {
+        "city": string,
+        "street": string,
+        ["apartment": int]
+    }
+}
