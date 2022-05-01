@@ -8,7 +8,7 @@ bash init.sh
 
 ## Routes
 
-GET http://localhost:8080/orders[?limit=int[&offset=int]] - list
+GET http://localhost:8080/orders[?limit=int[&offset=int]] - list orders
 
 GET http://localhost:8080/orders/id - order
 
@@ -19,7 +19,7 @@ PUT http://localhost:8080/orders/id - update order
 DELETE http://localhost:8080/orders/id - delete order
 
 POST, PUT payload
-
+```
 {
     "orderNumber": string,
     "lastname": string,
@@ -31,3 +31,4 @@ POST, PUT payload
         ["apartment": int]
     }
 }
+```
