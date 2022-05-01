@@ -14,6 +14,11 @@ use PHPUnit\Framework\TestCase;
 
 class OrderValidatorTest extends TestCase
 {
+    public function testWrong(): void
+    {
+        $this->assertSame(5, 2+2);
+    }
+
     public function testSomething(): void
     {
         $validator = new OrderValidator();
