@@ -22,6 +22,9 @@ class OrderController extends AbstractController
 {
     use LimitOffsetTrait;
 
+    /**
+     * Список заказов.
+     */
     #[Route('', name: 'app_orders', methods: ['GET'])]
     public function index(Request $request, OrderRepository $orderRepository): Response
     {
@@ -32,6 +35,9 @@ class OrderController extends AbstractController
         return $this->json($orders, Response::HTTP_OK, [], ['groups' => 'order_index']);
     }
 
+    /**
+     * Заказ.
+     */
     #[Route('/{id}', name: 'app_order', methods: ['GET'])]
     public function show(int $id, OrderRepository $orderRepository): Response
     {
@@ -44,6 +50,9 @@ class OrderController extends AbstractController
         return $this->json($order, $statusCode, [], ['groups' => 'order_show']);
     }
 
+    /**
+     * Создать заказ.
+     */
     #[Route('', name: 'app_order_create', methods: ['POST'])]
     public function create(Request $request, OrderService $orderService): Response
     {
@@ -60,6 +69,9 @@ class OrderController extends AbstractController
         return $this->json($data, $statusCode, [], ['groups' => 'order_show']);
     }
 
+    /**
+     * Обновить заказ.
+     */
     #[Route('/{id}', name: 'app_order_update', methods: ['PUT'])]
     public function update(Request $request, int $id, OrderService $orderService): Response
     {
@@ -76,6 +88,9 @@ class OrderController extends AbstractController
         return $this->json($data, $statusCode, [], ['groups' => 'order_show']);
     }
 
+    /**
+     * Удалить заказ.
+     */
     #[Route('/{id}', name: 'app_order_delete', methods: ['DELETE'])]
     public function delete(int $id, OrderService $orderService): Response
     {

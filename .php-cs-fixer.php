@@ -15,6 +15,8 @@ $finder = PhpCsFixer\Finder::create()
     ->exclude('node_modules')
     ->exclude('postgres-data')
     ->exclude('migrations')
+    ->exclude('tests/bootstrap.php')
+    ->exclude('config')
 ;
 
 return (new PhpCsFixer\Config())

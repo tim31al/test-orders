@@ -14,6 +14,9 @@ use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Doctrine\ORM\EntityManagerInterface;
 use JetBrains\PhpStorm\ArrayShape;
 
+/**
+ * Создание, редактирование, удаление заказов.
+ */
 class OrderService
 {
     private const ORDER_NOT_FOUND = ['id' => 'order not found'];

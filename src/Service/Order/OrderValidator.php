@@ -34,8 +34,9 @@ class OrderValidator
 
         $this->constraint = new Assert\Collection([
             'orderNumber' => [
-              new Assert\Regex('/^[A-z-_\d]+/'),
-              new Assert\Length(['max' => 255]),
+                new Assert\Type(['type' => 'string']),
+                new Assert\Regex('/^[A-z-_\d]+/'),
+                new Assert\Length(['max' => 255]),
             ],
             'lastname' => $nameRules,
             'firstname' => $nameRules,
