@@ -21,10 +21,10 @@ jobs:
         run: docker-compose up -d
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-progress
+        run: docker-compose exec -u app app composer install --prefer-dist --no-progress
 
       - name: Test App
-        run: make
+        run: docker-compose exec -u app app make
 
       - name: Stop containers
         run: docker-compose down -v
